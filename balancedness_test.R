@@ -27,6 +27,11 @@ summary(reg)
 
 regressions = list(reg, reg1, reg2, reg3, reg4, reg5)
 
+reg_own = lm_robust(log(penetration_fb_pre) ~ log(nbi2005) + log(indruralildad2017) + log(pib_num_2016), data = data)
+summary(reg_own)
+
+modelsummary(reg_own, title = "Factors influencing Facebook penetration", title.bold = T)
+
 modelsummary(regressions)
 
 
